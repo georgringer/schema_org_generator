@@ -1,0 +1,55 @@
+{
+	"name": "georgringer/schema-org-generator",
+	"description": "Generate json-ld based on schema org",
+	"type": "typo3-cms-extension",
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"schema.org",
+		"json-ld"
+	],
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"typo3/cms-core": "^8.7 || ^9.5",
+		"spatie/schema-org": "^2.1",
+		"php": ">=7.0"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "schema_org_generator",
+			"app-dir": ".Build",
+			"web-dir": ".Build/Web"
+		},
+		"typo3/class-alias-loader": {
+			"class-alias-maps": [
+				"Migrations/Code/ClassAliasMap.php"
+			]
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"GeorgRinger\\SchemaOrgGenerator\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"GeorgRinger\\SchemaOrgGenerator\\Tests\\": "Tests"
+		}
+	},
+	"replace": {
+		"schema_org_generator": "self.version",
+		"typo3-ter/schema-org-generator": "self.version"
+	},
+	"require-dev": {
+		"php-coveralls/php-coveralls": "^2.1"
+	},
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin"
+	},
+	"scripts": {
+		"post-autoload-dump": [
+			"TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+		]
+	}
+}
