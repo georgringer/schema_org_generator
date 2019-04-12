@@ -22,13 +22,10 @@ class TransformatorFactory implements SingletonInterface
     /**
      * @param mixed $in
      * @return TransformatorInterface
-     * @todo finalize
      */
     public function getTransformatorForObject($in): ?TransformatorInterface
     {
-        $transformators = [
-            TtAddressTransformator::class,
-        ];
+        $transformators = (array)$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['schema-org']['transformators'];
         foreach ($transformators as $transformator) {
             /** @var TransformatorInterface $instance */
             $instance = GeneralUtility::makeInstance($transformator);
