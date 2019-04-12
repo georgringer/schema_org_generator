@@ -48,11 +48,26 @@ class TtAddressTransformator implements TransformatorInterface
         $schemaAddress = Schema::postalAddress();
 
         $mapping = [
+            'address' => 'streetAddress',
+            'zip' => 'postalCode',
+            'city' => 'addressLocality',
+            'country' => 'addressCountry',
+            'phone' => 'telephone', // todo + mobile
+            'fax' => 'faxNumber',
+            'position' => 'jobTitle',
+            'www' => 'url', // todo simplified
+            'birthday' => 'birthDate', // todo format %Y-%m-%d
             'email' => 'email',
         ];
+        // + twitter, skype, facebook, linkedin
+        // + images
+
         foreach ($mapping as $from => $to) {
             $getter = 'get' . ucfirst($from);
-            $schemaAddress->setProperty($to, $address->$getter());
+            $content = $address->$getter();
+            if ($content) {
+                $schemaAddress->setProperty($to, $content);
+            }
         }
         return $schemaAddress;
     }
