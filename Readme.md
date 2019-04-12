@@ -7,6 +7,11 @@ This extensions generates json-ld from models and is currently just a PoC.
 - Do `composer require spatie/schema-org`
 - Install this extension
 
+## Requirements
+
+- TYPO3 8,9,10
+- PHP 7.2+
+
 ## Usage
 
 ### Basic usage

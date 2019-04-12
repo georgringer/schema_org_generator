@@ -1,9 +1,14 @@
 <?php
-
 declare(strict_types=1);
 
 namespace GeorgRinger\SchemaOrgGenerator\Transformator;
 
+/**
+ * This file is part of the "schema_org_generator" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ */
 
 use FriendsOfTYPO3\TtAddress\Domain\Model\Address;
 use Spatie\SchemaOrg\Graph;
@@ -11,6 +16,9 @@ use Spatie\SchemaOrg\PostalAddress;
 use Spatie\SchemaOrg\Schema;
 use Spatie\SchemaOrg\Type;
 
+/**
+ * Transform tt_address Address model
+ */
 class TtAddressTransformator implements TransformatorInterface
 {
     public function canHandle($in): bool
@@ -48,6 +56,5 @@ class TtAddressTransformator implements TransformatorInterface
         }
         return $schemaAddress;
     }
-
 
 }
