@@ -23,13 +23,14 @@ class TransformatorFactory implements SingletonInterface
      * @param mixed $in
      * @return TransformatorInterface
      */
-    public function getTransformatorForObject($in): ?TransformatorInterface
+    public function getTransformatorForObject($in, string $link = '', array $extra = []): ?TransformatorInterface
     {
         $transformators = (array)$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['schema-org']['transformators'];
         foreach ($transformators as $transformator) {
             /** @var TransformatorInterface $instance */
             $instance = GeneralUtility::makeInstance($transformator);
             if ($instance->canHandle($in)) {
+                $instance->initialize($link, $extra);
                 return $instance;
             }
         }

@@ -25,6 +25,12 @@ interface TransformatorInterface
     public function canHandle($in): bool;
 
     /**
+     * @param string $link
+     * @param array $extraData
+     */
+    public function initialize(string $link = '', array $extraData = []):void;
+
+    /**
      * Transform input to Schema type
      *
      * @param $in

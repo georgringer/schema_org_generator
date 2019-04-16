@@ -40,6 +40,12 @@ class TtAddressTransformator implements TransformatorInterface
         return $graph;
     }
 
+    public function initialize(string $link = '', array $extraData = []): void
+    {
+        // TODO: Implement initialize() method.
+    }
+
+
     /**
      * @param Address $address
      */

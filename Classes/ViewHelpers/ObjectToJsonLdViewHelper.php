@@ -26,6 +26,8 @@ class ObjectToJsonLdViewHelper extends AbstractViewHelper
     {
         parent::initializeArguments();
         $this->registerArgument('object', 'object', 'Object', true);
+        $this->registerArgument('link', 'link', 'string', false, '');
+        $this->registerArgument('extra', 'Extra information', 'array', false, []);
     }
 
     /**
@@ -41,7 +43,7 @@ class ObjectToJsonLdViewHelper extends AbstractViewHelper
     )
     {
        $factory = GeneralUtility::makeInstance(TransformatorFactory::class);
-       $transformator = $factory->getTransformatorForObject($arguments['object']);
+       $transformator = $factory->getTransformatorForObject($arguments['object'], $arguments['link'], $arguments['extra']);
        if ($transformator) {
            $schemaType = $transformator->transform($arguments['object']);
            return $schemaType->toScript();
