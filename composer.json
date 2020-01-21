@@ -19,11 +19,6 @@
 			"extension-key": "schema_org_generator",
 			"app-dir": ".Build",
 			"web-dir": ".Build/Web"
-		},
-		"typo3/class-alias-loader": {
-			"class-alias-maps": [
-				"Migrations/Code/ClassAliasMap.php"
-			]
 		}
 	},
 	"autoload": {
