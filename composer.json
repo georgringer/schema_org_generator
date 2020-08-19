@@ -32,7 +32,6 @@
 		}
 	},
 	"replace": {
-		"schema_org_generator": "self.version",
 		"typo3-ter/schema-org-generator": "self.version"
 	},
 	"require-dev": {
