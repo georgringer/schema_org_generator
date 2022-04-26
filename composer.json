@@ -10,16 +10,9 @@
 	],
 	"license": "GPL-2.0-or-later",
 	"require": {
-		"typo3/cms-core": "^9.5 || ^10.4",
-		"spatie/schema-org": "^2.1",
-		"php": ">=7.3"
-	},
-	"extra": {
-		"typo3/cms": {
-			"extension-key": "schema_org_generator",
-			"app-dir": ".Build",
-			"web-dir": ".Build/Web"
-		}
+		"typo3/cms-core": "^10.4 || ^11.5",
+		"spatie/schema-org": "^3",
+		"php": ">=7.4"
 	},
 	"autoload": {
 		"psr-4": {
@@ -34,16 +27,9 @@
 	"replace": {
 		"typo3-ter/schema-org-generator": "self.version"
 	},
-	"require-dev": {
-		"php-coveralls/php-coveralls": "^2.1"
-	},
-	"config": {
-		"vendor-dir": ".Build/vendor",
-		"bin-dir": ".Build/bin"
-	},
-	"scripts": {
-		"post-autoload-dump": [
-			"TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-		]
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "schema_org_generator"
+		}
 	}
 }
