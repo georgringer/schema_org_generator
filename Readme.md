@@ -9,7 +9,7 @@ This extensions generates json-ld from models and is currently just a PoC.
 
 ## Requirements
 
-- TYPO3 8,9,10
+- TYPO3 10,11,12
 - PHP 7.2+
 
 ## Usage
